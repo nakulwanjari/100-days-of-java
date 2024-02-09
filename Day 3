@@ -1,0 +1,51 @@
+import java.util.*;
+public class challenge {
+
+public static int sumofn(int n) {
+  if(n==1){
+    return 1;
+  }
+  int snm = sumofn(n- 1);
+  int sn  = n + snm;
+  return sn;
+}
+
+public static int fibo(int n){
+    if(n==0 || n==1){
+      return n;
+    }
+    int fnm = fibo(n-1);
+    int fnm2 = fibo(n-2);
+    int fn = fnm + fnm2;
+    return fn;
+
+}
+
+public static boolean sortedarray(int arr[] , int i){
+      if(i==arr.length -1){
+        return true;
+      }
+      if(arr[i] > arr[i+1]){
+        return false;
+      }
+      return sortedarray(arr, i+1);
+}
+
+  public static int firstoccur(int arr[], int key, int i) {
+      if (i == arr.length) {
+          return -1;
+      }
+
+      if (arr[i] == key) {
+          return i;
+      }
+
+      return firstoccur(arr, key, i + 1);
+  }
+
+  public static void main(String[] args) {
+      int arr[] = {1, 5, 3, 9, 5};
+      int key = 5;
+      System.out.print(firstoccur(arr, key, 0));
+  }
+}
