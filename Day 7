@@ -1,0 +1,57 @@
+import javax.print.DocFlavor.STRING;
+import java.util.Arrays;
+import java.util.*;
+public class day4{
+
+    //Check duplicate arrays 
+//     public static void main(String[] args) {
+//         String str = new String("RahulRaa");
+//         int count=0;
+//         char[] ch = str.toCharArray();
+//         for(int i=0;i<ch.length;i++){
+//         for(int j=i+1;j<ch.length;j++){
+//             if(ch[i] == ch[j]){
+//                 System.out.println("Duplicate char in STRING are : " + ch[j]);
+//                 count++;
+//             }
+//         }
+//     }
+//     System.out.println("duplicate ch count"+count);
+//     }
+
+
+//Sort array of strings 
+    // public static void main(String[] args) {
+    //     String[] stringarray = {"jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"};
+    //     Arrays.sort(stringarray, String.CASE_INSENSITIVE_ORDER);        
+    //     for(String newsString : stringarray){
+    //         System.out.println(newsString);
+    //     }
+    // }
+
+    //Reverse string
+    // public static void main(String[] args) {
+    //     String str= "Nakul";
+    //     char[] ch = str.toCharArray();
+    //     for(int i=ch.length-1; i>=0 ; i--){
+    //         System.out.print(ch[i]);
+    //     }
+    // }
+    
+
+    //Palindrome string
+    public static void main(String[] args) {
+        String Original , Reverse = "";
+        Scanner sc =new Scanner(System.in);
+        Original = sc.nextLine();
+          int length = Original.length();
+          for(int i=length-1;i>0;i--){
+                Reverse = Reverse + Original.charAt(i);
+          }
+          if(Original.equals(Reverse)){
+            System.out.println("PALINDROME");
+          }else{
+            System.out.println("not pali");
+          }
+    }
+}
