@@ -1,0 +1,28 @@
+//vowel check
+public class Main {
+    public static void main(String[] args) {
+        char[] input = {'a', 'b', 'c', 's', 'u', 'o'};
+        
+        int nonVowelCount = vowelnocount(input);
+        System.out.println("Non-vowel count: " + nonVowelCount);
+    }
+
+    public static int vowelnocount(char[] input) {
+        String str = "aeiouAEIOU";
+        int count = 0;
+        char[] stre = str.toCharArray();
+        for (int i = 0; i < input.length; i++) {
+            boolean isVowel = false;
+            for (int j = 0; j < stre.length; j++) {
+                if (input[i] == stre[j]) {
+                    isVowel = true;
+                    break;
+                }
+            }
+            if (!isVowel) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
