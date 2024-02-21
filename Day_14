@@ -1,0 +1,60 @@
+public class backtracking {
+//BACKTRACKING ON ARRAY
+
+    public static void backArr(int arr[] , int i , int val){
+        if(i== arr.length) {                            //base casse
+            printArr(arr);
+            return;
+        } 
+        arr[i] = val;
+        backArr(arr, i+1, val+1);             //recur
+        arr[i] = arr[i] - 2;                 //backtrack
+    }
+    public static void printArr(int wrr[]){
+        for (int i = 0; i < wrr.length; i++) {
+            System.out.print(wrr[i] + " ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        int arr[] = {1,2,3,4,5};
+        backArr(arr, 0, 1);
+        printArr(arr);
+    }
+
+    //SUBSETS OF STRING
+
+        public static void findSubsets(String str ,int i , String newstr){
+                if(i==str.length()){
+                    if(newstr.length() == 0){
+                        System.out.println("null");
+                    }else{
+                        System.out.println(newstr);
+                    }
+                    return;
+                }
+                findSubsets(str, i+1, newstr+str.charAt(i));
+                findSubsets(str, i+1, newstr);
+        }
+    public static void main(String[] args) {
+        String str = "abc";
+        findSubsets(str, 0, " ");
+    }
+
+//Permutation of String
+public static void Permutation(String str , String ans){
+    if(str.length() == 0){
+        System.out.println(ans);
+    }
+    for(int i=0 ; i<str.length() ; i++){
+        char curr = str.charAt(i);
+        //"abcde" = "ab" + "de"
+        String Newstr= str.substring(0, i) + str.substring(i+1);
+        Permutation(Newstr , ans+curr);
+    }
+}
+public static void main(String[] args) {
+    String str= "abc";
+    Permutation(str , " ");
+}
+}
