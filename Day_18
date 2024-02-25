@@ -1,0 +1,44 @@
+import jaaava.util.*;
+public class pairSum{
+ public static boolean isModulo(ArrayList<Integer> A , int target){
+            int i;
+            int pivot=-1;
+            int n = A.size();
+            for(i=0;i<A.size()-1;i++){
+                if(A.get(i) > A.get(i+1)){//breaking point
+                    pivot=i;
+                    break;
+                }
+            }
+            int lp=pivot+1;  //smallest
+            int rp = pivot; //largest
+            while(lp != rp){
+                if(A.get(lp) + A.get(rp) == target){
+                    return true;
+                }if(A.get(lp) + A.get(rp) < target){
+                lp = (lp +1) %n;
+                }else{
+                    rp=(n+rp-1)%n;
+                }
+            }
+            return false;
+        }
+    public static void main(String[] args) {
+        ArrayList<Integer> A = new ArrayList<>();
+        sudoku s = new sudoku();
+        A.add(11);
+        A.add(15);
+        A.add(6);
+        A.add(8);
+        A.add(9);
+        A.add(10);
+        int target =6;
+        System.out.println(isModulo(A, target));
+    }
+}
+
+// Accessing elements in a cyclic manner
+// Circular iteration in reverse through an array
+rp = (n + rp - 1) % n;
+// Circular iteration through an array
+lp = (lp + 1) % n;
