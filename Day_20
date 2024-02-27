@@ -1,0 +1,45 @@
+public class Subsests{  
+
+    // Function to generate all subsets of a given string
+    public static void generateAllSubsets(String str) {
+        int len = str.length();
+        int temp = 0;
+        String arr[] = new String[len * (len + 1) / 2];
+
+        for (int i = 0; i < len; i++) {
+            for (int j = i; j < len; j++) {
+                arr[temp] = str.substring(i, j + 1);
+                temp++;
+            }
+        }
+
+        System.out.println("All subsets for given string are: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    // Function to generate all permutations of a given string
+    public static void generateAllPermutations(String str, String ans) {
+        if (str.length() == 0) {
+            System.out.println(ans);
+        }
+        for (int i = 0; i < str.length(); i++) {
+            char curr = str.charAt(i);
+            String newStr = str.substring(0, i) + str.substring(i + 1);
+            generateAllPermutations(newStr, ans + curr);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example for generating subsets
+        String subsetStr = "NAKUL";
+        generateAllSubsets(subsetStr);
+
+        // Example for generating permutations
+        String permutationStr = "NAKUL";
+        System.out.println("All permutations for given string are: ");
+        generateAllPermutations(permutationStr, "");
+    }
+}
+
