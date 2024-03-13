@@ -1,0 +1,47 @@
+
+public class Bookstore {
+    public int calculatePrice(int pr, int qr) {
+        int n = 10;
+        if (qr > n) {
+            return pr * qr;
+        } else {
+            return 0;
+        }
+    }
+
+    public int calculatePrice(int type, int qty, int price) {
+        if (type == 1) {
+            return 100 + (qty + price);
+        } else if (type == 2) {
+            return 200 + (qty * price);
+        } else {
+            return 0;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Bookstore bookstore = new Bookstore();
+        System.out.println("Enter the price of the book: ");
+        int pr = sc.nextInt();
+
+        System.out.println("Enter Quantity: ");
+        int qr = sc.nextInt();
+
+        System.out.println("Price of the book: " + bookstore.calculatePrice(pr, qr));
+
+        System.out.println("Enter the type of book (1 or 2): ");
+        int type = sc.nextInt();
+
+        System.out.println("Enter Quantity: ");
+        int qty = sc.nextInt();
+
+        System.out.println("Enter Price: ");
+        int price = sc.nextInt();
+
+        System.out.println("Price of the book: " + bookstore.calculatePrice(type, qty, price));
+    }
+}
+
+
