@@ -13,3 +13,27 @@
             }
             System.out.println(count);
         }
+
+---------------------------------------------------------------------------------------
+
+    public static int findRotationType(String str1, String str2) {
+        if (str1.length() != str2.length()) {
+            return -1; 
+        }
+        String concatenatedStr1 = str1 + str1; 
+
+        if (concatenatedStr1.indexOf(str2) != -1) {
+            return 1; // str2 is found as a substring of concatenatedStr1, indicating a cyclic rotation
+        } else {
+            return -1; // str2 is not found as a substring of concatenatedStr1, indicating an acyclic rotation
+        }
+    }
+
+    public static void main(String[] args) {
+        String str1 = "NAKUL";
+        String str2 = "KANUL";
+        int result = findRotationType(str1, str2);
+        System.out.println("Rotation type: " + result);
+       
+    }
+}
