@@ -1,0 +1,19 @@
+public class Program{ 
+    public static String removeDuplicates(String input) {
+        StringBuilder output = new StringBuilder();
+
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+            if (input.indexOf(currentChar) == i) {
+                output.append(currentChar);
+            }
+        }
+
+        return output.toString();
+    }
+    public static void main(String[] args) {
+        String input = "MADAM";
+        String output = removeDuplicates(input);
+        System.out.println("Input: " + input);
+        System.out.println("Output: " + output);
+    }
