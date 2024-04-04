@@ -17,3 +17,20 @@ public class Program{
         System.out.println("Input: " + input);
         System.out.println("Output: " + output);
     }
+--------------------------------------------------------
+    public static void main(String[] args) {
+        String str = new String("Rahulraa");
+        int[] count = new int[256]; // Assuming ASCII characters
+        char[] ch = str.toCharArray();
+        for (int i = 0; i < ch.length; i++) {
+            count[ch[i]]++;
+        }
+        // Print duplicates and their counts
+        for (int i = 0; i < ch.length; i++) {
+            if (count[ch[i]] > 1) {
+                System.out.println(ch[i] + "-" + count[ch[i]]);
+                count[ch[i]] = 0; // Set count to 0 to avoid printing duplicates again
+            }
+        }
+    }
+}
