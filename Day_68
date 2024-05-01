@@ -1,0 +1,20 @@
+    public String reversePrefix(String word, char ch) {
+        int inx=word.indexOf(ch);
+        if(inx == -1)
+            return word;
+        StringBuilder sb = new StringBuilder(word.substring(0,inx+1)).reverse();
+        if(inx+1 < word.length())
+            sb.append(word.substring(inx+1));
+            return sb.toString();
+        
+    }
+
+
+    public static void main(String[] args) {
+        stringss obj = new stringss();
+        String word = "abcdefd";
+        char ch = 'd';
+        System.out.println(obj.reversePrefix(word, ch));
+    }
+
+}
