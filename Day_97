@@ -1,1 +1,29 @@
-update 
+//CHECK WHETHER WHICH IS BIGGER AND GIVE SOLUTION AND CONVERT 
+    public static void main(String[] args) {
+        String input = "abABCD";
+        char[] ch = input.toCharArray();
+        int countSmall = 0;
+        int countCaps = 0;
+        for(char c : ch){
+            if( c >= 'a' && c <='z'){
+                countSmall++;
+            }else{
+                countCaps++;
+            }
+        }
+        if(countSmall > countCaps){
+            System.out.println(input.toLowerCase());
+        }else {
+            System.out.println(input.toUpperCase());
+        }
+
+       // WIHTOUT BUILT IN FUNCTION CONVERT
+        StringBuilder sb = new StringBuilder();
+        for(char c:ch){
+            if( c >='A' && c <='Z'){
+                sb.append((char) (c+'a' - 'A'));
+            }else{
+                sb.append(c);
+            }
+        }
+        System.out.println(sb.toString());
